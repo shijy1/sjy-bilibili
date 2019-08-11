@@ -1,0 +1,78 @@
+﻿.tuiGuang > .list {
+    position: relative;
+    height: 86px;
+    width: 100%;
+    background-color: white;
+}
+
+.tuiGuang .list .icon {
+    position: absolute;
+    top: 28px;
+    width: 40px;
+    height: 40px;
+}
+
+.tuiGuang > .list > span {
+    font-size: 28px;
+    position: relative;
+    top: 30px;
+    left: 50px;
+}
+
+.tuiGuang > .list > .tongji {
+    width: 260px;
+    height: 18px;
+    background-color: #E5E8EE;
+    border-radius: 5px;
+    position: relative;
+    top: 40px;
+    float: right;
+    padding: 8px;
+    color: #B8BECB;
+    font-size: xx-small;
+}
+
+    .tuiGuang > .list > .tongji a {
+        cursor: pointer;
+        margin: 10px 13px;
+        text-align: center;
+    }
+
+.tuiGuang > .body {
+    height: 184px;
+    width: 100%;
+    /*background-color: greenyellow;*/
+}
+
+    .tuiGuang > .body > .left {
+        width: 721px;
+        height: 150px;
+        /*background-color:cornflowerblue;*/
+        float: left;
+    }
+
+        .tuiGuang > .body > .left a {
+            width: 160px;
+            height: 150px;
+            float: left;
+            margin-right: 20px;
+        }
+
+            .tuiGuang > .body > .left a span {
+                position: relative;
+                /*top:5px;
+            display:block;*/
+                font-size: 10px;
+            }
+
+    .tuiGuang > .body > .right {
+        width: 260px;
+        height: 150px;
+        /*background-color:aqua;*/
+        float: right;
+    }
+
+        .tuiGuang > .body > .right a img {
+            width: 100%;
+            height: 100%;
+        }

@@ -1,0 +1,308 @@
+﻿/*相似布局*/
+/*left*/
+.bj .left, .wl .left {
+    width: 721px;
+    height: 100%;
+    float: left;
+    position: relative;
+    background-color: white;
+}
+
+    .bj .left .left_top {
+        height: 30px;
+        padding: 25px 0px 12px 0px;
+        background-color: white;
+    }
+
+        .bj .left .left_top .icon {
+            position: absolute;
+            top: 22px;
+            width: 40px;
+            height: 40px;
+            background-color: darkcyan;
+        }
+
+        .bj .left .left_top .name {
+            position: relative;
+            font-size: x-large;
+            left: 50px;
+        }
+
+        .bj .left .left_top .dh {
+            font-size: x-small;
+            position: relative;
+            cursor: pointer;
+            left: 65px;
+            top: -2px;
+        }
+
+        .bj .left .left_top .dongtai {
+            color: #3B9ED5;
+        }
+
+        .bj .left .left_top .dh span {
+            display: block;
+            height: 1px;
+            width: 50px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            background-color: #3B9ED5;
+        }
+
+        .bj .left .left_top .upgrate span {
+            display: none;
+        }
+
+        .bj .left .left_top .dh span:after {
+            content: '';
+            width: 0;
+            border-width: 4px;
+            border-style: solid;
+            border-color: transparent transparent #3B9ED5 transparent;
+            position: absolute;
+            left: 20px;
+            top: -7px;
+        }
+
+        .bj .left .left_top .btn {
+            border: 1px solid gray;
+            border-radius: 5px;
+            font-size: small;
+            padding: 2px 6px;
+            position: relative;
+            float: right;
+            right: 22px;
+            top: 5px;
+            margin-left: 10px;
+        }
+
+        .bj .left .left_top .btn1 div {
+            display: inline-block;
+            width: 16px;
+            height: 13px;
+            background: url(../images/icons.png) 1127px -88px;
+        }
+
+        .bj .left .left_top .btn:hover {
+            background-color: rgba(203, 207, 214,1);
+        }
+
+        .bj .left .left_top .btn2 div {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            background: url(../images/icons.png) 1125px -216px;
+        }
+
+        .bj .left .left_top .btn2 span {
+            display: inline-block;
+        }
+
+        .bj .left .left_top .btn1 span {
+            font-weight: bold;
+        }
+
+    .bj .left > .content .content1 {
+        position: absolute;
+    }
+
+    .bj .left > .content .content2 {
+        display: none;
+    }
+
+    .bj .left > .content a {
+        width: 160px;
+        height: 144px;
+        float: left;
+        margin: 0px 20px 16px 0px;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .bj .left > .content a img {
+            border-radius: 4px;
+        }
+
+        .bj .left > .content a > span {
+            position: relative;
+            /*top: 5px;
+                display: block;*/
+            font-size: 10px;
+            line-height: 1.7;
+            height: 40px;
+            display: block;
+            overflow: hidden;
+            /*background-color:dodgerblue;*/
+        }
+
+            .bj .left > .content a > span:hover {
+                color: rgba(59, 167, 225,1);
+            }
+
+        .bj .left > .content a .playNum {
+            width: 100%;
+            height: 16px;
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            font-size: 10px;
+            padding-top: 2px;
+            transition: 0.3s ease;
+            background-color: white;
+        }
+
+            .bj .left > .content a .playNum span {
+                margin-right: 30px;
+                padding-left: 18px;
+                color: #B5B5B2;
+            }
+
+            .bj .left > .content a .playNum .pN1 {
+                background: url(../images/icons.png) 1318px -88px;
+            }
+
+            .bj .left > .content a .playNum .pN2 {
+                background: url(../images/icons.png) 1319px -216px;
+            }
+
+        .bj .left > .content a img {
+            width: 160px;
+            height: 100px;
+        }
+
+/*right*/
+.bjr .right {
+    width: 260px;
+    height: 100%;
+    float: right;
+    background-color: white;
+}
+
+    .bjr .right .title {
+        width: 100%;
+        height: 30px;
+        position: relative;
+        top: 30px;
+        background-color: white;
+    }
+
+        .bjr .right .title > span {
+            font-size: large;
+        }
+
+        .bjr .right .title a {
+            font-size: small;
+            position: relative;
+            top: -2px;
+            left: 10px;
+            margin-right: 8px;
+        }
+
+        .bjr .right .title .ph_qb {
+            color: #3B9ED5;
+        }
+
+        .bjr .right .title .ph_yc span {
+            display: none;
+        }
+
+        .bjr .right .title a span {
+            display: block;
+            height: 1px;
+            width: 25px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            background-color: #3B9ED5;
+        }
+
+            .bjr .right .title a span:before {
+                content: '';
+                width: 0;
+                border-width: 4px;
+                border-style: solid;
+                border-color: transparent transparent #3B9ED5 transparent;
+                position: absolute;
+                left: 9px;
+                top: -7px;
+            }
+
+        .bjr .right .title select {
+            height: 25px;
+            float: right;
+            position: relative;
+            right: 5px;
+        }
+
+    .bjr .right .content {
+        height: 320px;
+        position: relative;
+        top: 40px;
+        font-size: small;
+        background-color: white;
+    }
+
+        .bjr .right .content .qb {
+            display: block;
+        }
+
+        .bjr .right .content .yc {
+            display: none;
+        }
+
+        .bjr .right .content li {
+            display: block;
+            list-style-type: none;
+            margin-bottom: 18px;
+            font-size: smaller;
+        }
+
+            .bjr .right .content li a {
+                position: relative;
+                left: 5px;
+            }
+
+                .bjr .right .content li a:hover {
+                    color: #3B9ED5;
+                }
+
+        .bjr .right .content .first img {
+            border-radius: 3px;
+            position: relative;
+            left: 5px;
+        }
+
+        .bjr .right .content .first a {
+            width: 150px;
+            position: relative;
+            float: right;
+        }
+
+            .bjr .right .content .first a p {
+                position: relative;
+                top: 3px;
+                color: #B5B5B2;
+            }
+
+        .bjr .right .content li span {
+            display: inline-block;
+            float: left;
+            text-align: center;
+            width: 18px;
+            height: 17px;
+            padding-top: 1px;
+            border-radius: 3px;
+            background-color: #B8BECB;
+        }
+
+            .bjr .right .content li span.red {
+                background-color: #EA568D;
+            }
+
+        .bjr .right .content .more {
+            height: 22px;
+            text-align: center;
+            background-color: lightgray;
+            padding-top: 3px;
+        }

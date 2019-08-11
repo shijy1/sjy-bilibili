@@ -1,0 +1,175 @@
+﻿.menu > .lists {
+    width: 100%;
+    height: 63px;
+    position:relative;
+    /*background-color: orchid;*/
+}
+
+    .menu > .lists ul li {
+        list-style: none;
+        float: left;
+        background-color:white;
+        padding: 30px 10px 11.5px 0;
+    }
+#icon4{
+        background:url(../images/icons.png) 940px 1275px;
+    }
+        .menu > .lists ul li a {
+            cursor: pointer;
+            font-size: small;
+            position:relative;
+            padding: 25px 8.5px 12px 0;
+        }
+        .menu > .lists ul li a span{
+            width:28px;
+            height:12px;
+            display:inline-block;
+            background-color:#FAABC8;
+            font-size:12px;
+            position:absolute;
+            border-radius:3px;
+            top:8px;
+            left:30px;
+            transform:translateX(-30px) scale(0.85);
+            color:#fff;
+            padding:0px 1px 2px 3px;
+        }
+            .menu > .lists ul li a:hover {
+                /*background-color: forestgreen;*/
+            }
+            .menu > .lists ul li a.icon_zl{
+                background:url(../images/icons.png) 1517px -1810px;
+            }
+            .menu > .lists ul li a.icon_gc{
+                background:url(../images/icons.png) 1517px -2002px;
+            }
+            .menu > .lists ul li a.icon_zb{
+                background:url(../images/icons.png) 1517px -1874px;
+            }
+            .menu > .lists ul li a.icon_b{
+                background:url(../images/icons.png) 1523px -1938px;
+            }
+            .menu > .lists .gif{
+                height:40px;
+                width:70px;
+                position:absolute;
+                top:10px;
+                right:2px;
+                background:url(../images/nav_gif.gif);
+            }
+.menu > .lists_content {
+    height: 221px;
+    width: 100%;
+    position:relative;
+    /*background-color: lightseagreen;*/
+}
+
+ .menu > .lists_content .right {
+    height: 100%;
+    width: 540px;
+    position:absolute;
+    top:0px;
+    left:441px;
+    /*background-color:cornflowerblue;*/
+}
+
+    .menu > .lists_content .right div {
+        width: 160px;
+        height: 100px;
+        float: left;
+        margin: 0 0 20px 20px;
+        background-color: lightslategrey;
+    }
+
+        .menu > .lists_content .right div img {
+            width: inherit;
+            height: inherit;
+            cursor:pointer;
+            border-radius: 5px;
+        }
+
+/*竖着的导航*/
+.Content > .vMenu {
+    width: 50px;
+    height:670px;
+    /*background-color: grey;*/
+    position: absolute;
+    top: 234px;
+    right: 80px;
+    overflow:hidden;
+    border-radius: 5px;
+}
+.Content > .vMenu .fix{
+    width: 50px;
+    height: 670px;
+    position:fixed;/*fixed的元素相对于视口进行定位*/
+    top: 234px;
+    right: 80px;
+    transition:0.6s ease;
+}
+    .Content > .vMenu .fix .box {
+        height: 605px;
+        width: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+        border: 1px solid #E6E9EF;
+    }
+
+.vMenu .fix .box a {
+    width: 50px;
+    height: 23.5px;
+    display: block;
+    background-color: #fff;
+    color: #000;
+    font-size: small;
+    text-align: center;
+    padding-top: 5.5px;
+    cursor: pointer;
+}
+.vMenu .fix .box a:not(.last){
+    transition:0.6s ease;
+}
+
+.vMenu .fix .box a:not(.last):hover {
+    background-color: #00A1D6! important;
+    color: #fff !important;
+}
+
+.vMenu .fix .box a.last{
+    height: 50px;
+    padding-top: 30px;
+    background: url(../images/icons.png) 952px -144px;
+    background-color: #fff;
+}
+
+.vMenu .fix .box a.last:hover {
+    background: url(../images/icons.png) 888px -144px;
+    background-color: #00A1D6;
+}
+
+.vMenu .vMenu_linkLine {
+    height: 10px;
+    width: 30px;
+    border: 1px solid #E6E9EF;
+    position: relative;
+    top: -1px;
+    margin: auto;
+    /*background:#a59;*/
+}
+
+.vMenu .toTop {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #E6E9EF;
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: url(../images/icons.png) 952px -71px;
+    background-color: #fff;
+}
+
+    .vMenu .toTop:hover {
+        background: url(../images/icons.png) 888px -71px;
+        background-color: #00A1D6;
+    }

@@ -1,0 +1,27 @@
+﻿/*last*/
+.last{
+    height:400px;
+    width:100%;
+    background-color:#F6F9FA;
+}
+.last .div_link{
+    height:175px;
+    width:100%;
+    background-color:#F6F9FA;
+}
+.last .div_link .link{
+    width:320px;
+    height:115px;
+    float:left;
+    position:relative;
+    left:140px;
+    margin-right:10px;
+    background-color:hotpink;
+}
+.last .div_link .icon_link{
+    height:115px;
+    width:250px;
+    position:relative;
+    left:840px;
+    background-color:turquoise;
+}

@@ -1,0 +1,122 @@
+﻿/*每一个模块左上角icon*/
+.zhibo .left > .content a .playNum span {
+    padding-left: 0px;
+}
+
+
+.fanju_dt .left .left_top .name, .guochuang_xg .left .left_top .name {
+    font-size: medium;
+    left: 0px;
+}
+
+.fanju_dt .left .left_top .dh, .guochuang_xg .left .left_top .dh {
+    left: 15px;
+}
+
+/*番剧动态右边*/
+.fanju_dt .right{
+    width: 260px;
+    height: 100%;
+    float: right;
+    /*background-color:blueviolet;*/
+}
+.fanju_dt .right .title {
+    height:30px;
+    width:100%;
+    position: relative;
+    top: 30px;
+    font-size: large;
+}
+
+.tuiGuang .list .icon {
+    background: url(../images/icons.png) 1460px -73px;
+}
+
+.zhibo .left .left_top .icon {
+    background: url(../images/icons.png) 1460px -654px;
+}
+
+
+.donghua .left .left_top .icon {
+    background: url(../images/icons.png) 1460px -910px;
+}
+
+.fanju .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -140px;
+}
+
+.guochuang .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1612px;
+}
+
+.music .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -269px;
+}
+
+.dancing .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -462px;
+}
+
+.game .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -204px;
+}
+
+.tec .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -526px;
+}
+
+.shuma .left .left_top .icon {
+    background: url(../images/icons.png) 1460px -1740px;
+}
+
+.life .left .left_top .icon {
+    background: url(../images/icons.png) 1462px -973px;
+}
+
+.guichu .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -332px;
+}
+
+.shishang .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -718px;
+}
+
+.ad .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1229px;
+}
+
+.yule .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1033px;
+}
+
+.zhuanlan .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1804px;
+}
+
+.move .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -396px;
+}
+
+.dianshiju .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -846px;
+}
+
+.yingshi .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1360px;
+}
+
+.jilupian .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -1294px;
+}
+
+.tbtj .left .left_top .icon {
+    background: url(../images/icons.png) 1461px -784px;
+}
+
+.tbtj .right a {
+    display: block;
+    position: relative;
+    top: 68px;
+    border-radius: 5px;
+    overflow: hidden;
+}

@@ -1,0 +1,175 @@
+﻿/*切换图片*/
+/*first_qiehuan*/
+.menu > .lists_content .left {
+    width: 441px;
+    height: 221px;
+    overflow: hidden;
+    position:relative;
+    /*float:left;*/
+}
+.menu > .lists_content .left .first_box {
+                width: 2205px;
+                height: 100%;
+                position: relative;
+                left: 0px;
+                transition: 0.4s ease;
+            }
+.menu > .lists_content .left .first_box a {
+                    display: inline-block;
+                    width: 441px;
+                    height: 221px;
+                    float: left;
+                    /*background-color: cadetblue;*/
+                }
+    .menu > .lists_content .left .first_box img {
+        height: 221px;
+        width: 441px;
+        /*position: absolute;*/
+        border-radius: 5px;
+    }
+
+.menu > .lists_content .left .first_spot {
+                width: 160px;
+                height: 20px;
+                /*background-color:greenyellow;*/
+                position: absolute;
+                left: 300px;
+                top: 190px;
+            }
+
+               .menu > .lists_content .left .first_spot span {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    float: left;
+                    margin-right: 5px;
+                    z-index: 1;
+                    cursor: pointer;
+                    background: url(../images/icons.png) 747px -790px;
+                }
+
+                    .menu > .lists_content .left .first_spot span.first {
+                        background: url(../images/icons.png) 747px -727px;
+                    }
+
+        .menu > .lists_content .left .first_spot span.noicon:hover {
+            background: url(../images/icons.png) 682px -790px!important;
+            /*background-color:#3EA1DA;
+           border:2px solid #FFFFFF;
+           position:relative;
+           top:-2px;
+           left:-2px;
+           margin-right:13px;*/
+        }
+
+
+/*fjdt_qiehuan*/
+.fanju_dt .right .content {
+    width: 260px;
+    height: 268px;
+    position: relative;
+    top: 35px;
+    /*border-radius:5px;*/
+    overflow:hidden;
+    left: 0px;
+    background-color:white;
+}
+.fanju_dt .right .content .fjdt_box{
+    width:780px;
+    height:100%;
+    position:relative;
+    left:0px;
+    transition:0.4s ease;
+
+}
+.fanju_dt .right .content .fjdt_box a{
+    display:inline-block;
+    width:260px;
+    height:268px;
+    float:left;
+    cursor:pointer;
+}
+.fanju_dt .right .content .fjdt_box img{
+    height:268px;
+    width:260px;
+    border-radius:5px;
+}
+.fanju_dt .right .content .fjdt_spot{
+    width:75px;
+    height:7px;
+    position:absolute;
+    top:250px;
+    left:172px;
+    /*background-color:palegreen;*/
+}
+.fanju_dt .right .content .fjdt_spot span{
+    display:block;
+    width:10px;
+    height:7px;
+    float:left;
+    border-radius:4px;
+    /*z-index:1;*/
+    margin-left:8px;
+    /*position:relative;*/
+    cursor:pointer;
+    /*top:-9px;*/
+    background-color:#FFFFFF;
+    transition: 0.4s ease;
+}
+.fanju_dt .right .content .fjdt_spot span.first{
+    width:30px;
+    background-color:#EC568E;
+}
+
+
+/*国创右下角图片切换*/
+.guochuang .right .img{
+    width:260px;
+    height:90px;
+    overflow:hidden;
+    position:relative;
+    top:-50px;
+    background-color:navajowhite;
+}
+.guochuang .right .img .gc_box{
+    height:100%;
+    width:520px;
+    position:relative;
+    left:0px;
+    transition:0.4s ease;
+}
+.guochuang .right .img a{
+    display:inline-block;
+    height:90px;
+    width:260px;
+    float:left;
+}
+.guochuang .right .img img{
+    height:90px;
+    width:260px;
+    border-radius:5px;
+    cursor:pointer;
+}
+.guochuang .right .img .gc_spot{
+    height:7px;
+    width:46px;
+    position:absolute;
+    top:75px;
+    left:200px;
+    /*background-color:rebeccapurple;*/
+}
+.guochuang .right .img .gc_spot span{
+    display:block;
+    float:left;
+    height:7px;
+    width:10px;
+    border-radius:4px;
+    margin-left:8px;
+    cursor:pointer;
+    background-color:#FFFFFF;
+    transition:0.4s ease;
+}
+.guochuang .right .img .gc_spot span.first{
+    width:20px;
+    background-color:#EC568E;
+}

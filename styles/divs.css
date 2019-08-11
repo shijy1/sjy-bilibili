@@ -1,0 +1,133 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    height: 170px;
+}
+
+.Content {
+    height: 100%;
+    width: 100%;
+    /*background-color: white;*/
+}
+
+    .Content > .box {
+        width: 981px;
+        height: 100%;
+        margin: auto;
+        /*background-color: white;*/
+    }
+
+.zhibo, .fanju_dt, .music, .guochuang_xg, .dancing, .game, .tec, .shuma, .life, .guichu, .shishang, .ad, .yule, .move, .dianshiju, .yingshi, .jilupian {
+    height: 410px;
+    width: 100%;
+}
+
+.donghua, .zhuanlan {
+    height: 430px;
+    width: 100%;
+}
+
+.tbtj {
+    height: 280px;
+    width: 100%;
+}
+
+.advertising {
+    height: 82px;
+    width:100%;
+    background-size: cover;
+    border-radius: 4px;
+}
+
+.ad1 {
+    background-image: url(../images/guanggao1.jpg);
+}
+
+.ad2 {
+    background-image: url(../images/guanggao2.jpg);
+}
+
+.ad3 {
+    background-image: url(../images/guanggao3jpg.png);
+}
+
+
+/*布局div颜色*/
+.zhibo {
+    /*background-color: red;*/
+}
+
+.donghua {
+    /*background-color: orangered;*/
+}
+
+.fanju_dt {
+    /*background-color: deepskyblue;*/
+}
+
+.guochuang_xg {
+    /*background-color: aqua;*/
+}
+
+.music {
+    /*background-color: orangered;*/
+}
+
+.dancing {
+    /*background-color: yellow;*/
+}
+
+.game {
+    /*background-color: green;*/
+}
+
+.tec {
+    /*background-color: aqua;*/
+}
+
+.shuma {
+    /*background-color: blue;*/
+}
+
+.life {
+    /*background-color: purple;*/
+}
+
+.guichu {
+    /*background-color: red;*/
+}
+
+.shishang {
+    /*background-color: orangered;*/
+}
+
+.ad {
+    /*background-color: yellow;*/
+}
+
+.yule {
+    /*background-color: green;*/
+}
+
+.zhuanlan {
+    /*background-color: deeppink;*/
+}
+
+.move {
+    /*background-color: aqua;*/
+}
+
+.dianshiju {
+    /*background-color: blue;*/
+}
+
+.yingshi {
+    /*background-color: purple;*/
+}
+
+.tbtj {
+    /*background-color: white;*/
+}
