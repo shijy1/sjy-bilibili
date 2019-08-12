@@ -1,5 +1,5 @@
 ﻿.zhibo .left .left_top .zb {
-    font-size: xx-small;
+    font-size: 12px;
     position: relative;
     cursor: pointer;
     color: #B5B5B2;
@@ -32,7 +32,7 @@
         /*background-color: Highlight;*/
         position: relative;
         top: 30px;
-        font-size: small;
+        font-size: 12px;
     }
         .zhibo .right .title a{
             position:relative;
@@ -192,7 +192,7 @@
             height: 100%;
             width: 40px;
             list-style-type: none;
-            font-size: larger;
+            font-size: 18px;
             float: left;
             text-align: center;
             margin-right: 15px;
@@ -298,11 +298,11 @@
     .wl .left > .content .content div {
         display: inline-block;
         height: 72px;
-        width: 190px;
+        width: 180px;
         float: left;
         position: relative;
-        font-size: x-small;
-        margin-right: 40px;
+        font-size: 12px;
+        margin-right: 46px;
         /*background-color:darkgray;*/
     }
 
@@ -376,7 +376,7 @@
         height: 75px;
         width: 336px;
         float: left;
-        font-size: x-small;
+        font-size: 12px;
         position: relative;
         margin: 0px 20px 14px 4px;
         /*background-color: lawngreen;*/
@@ -408,11 +408,13 @@
             position: absolute;
             bottom: 15px;
             left:115px;
-            font-size: 10px;
+            font-size: 12px;
             padding-top: 2px;
         }
         .zhuanlan .left .content > div .playNum span{
-            margin-right:30px;
+            display:inline-block;
+            width:50px;
+            margin-right:5px;
             padding-left:18px;
         }
         .zhuanlan .left .content > div .playNum .pN1{

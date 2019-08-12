@@ -95,7 +95,7 @@
     /*background-color: grey;*/
     position: absolute;
     top: 234px;
-    right: 80px;
+    left: calc(50vw + 492px);/*使vMenu固定保持在body右边一定距离*/
     overflow:hidden;
     border-radius: 5px;
 }
@@ -104,7 +104,7 @@
     height: 670px;
     position:fixed;/*fixed的元素相对于视口进行定位*/
     top: 234px;
-    right: 80px;
+    right: inherit;
     transition:0.6s ease;
 }
     .Content > .vMenu .fix .box {

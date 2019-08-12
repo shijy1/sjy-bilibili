@@ -29,7 +29,7 @@
     float: right;
     padding: 8px;
     color: #B8BECB;
-    font-size: xx-small;
+    font-size: 12px;
 }
 
     .tuiGuang > .list > .tongji a {
@@ -62,7 +62,7 @@
                 position: relative;
                 /*top:5px;
             display:block;*/
-                font-size: 10px;
+                font-size: 12px;
             }
 
     .tuiGuang > .body > .right {

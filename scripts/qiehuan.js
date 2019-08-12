@@ -79,27 +79,34 @@ var zbw = zbtj_imgs[0].offsetWidth;
 
 //自动切换
 function autoTimer() {
-    if (first_box.offsetLeft == -4 * w ) {
+    if (first_box.offsetLeft == -4 * w) {
         index = 0;
     } else {
         index++;
     }
     var leftChange = index * w;
+    leftChange = leftChange > (4 * w) ? 4 * w : leftChange;
     first_box.style.left = -leftChange + 'px';
     for (var j = 0; j < spans.length; j++) {
+        spans[j].classList.remove('first');
+        spans[j].classList.add('noicon');
         spans[j].style.background = 'url(../images/icons.png) 747px -790px';
     }
+    spans[index].classList.toggle("noicon");
+    spans[index].classList.add('first');
     spans[index].style.background = 'url(../images/icons.png) 747px -727px';
 }
 
 //直播推荐自动切换
 function zbtjTimer() {
+    var zbIndex = 0;
     if (zbtj_box.offsetLeft == -2 * zbw) {
         zbIndex = 0;
     } else {
         zbIndex++;
     }
     var leftChange = zbIndex * zbw;
+    leftChange = leftChange > (2 * zbw) ? 2 * zbw : leftChange;
     zbtj_box.style.left = -leftChange + 'px';
     for (var j = 0; j < zbtj_spans.length; j++) {
         zbtj_spans[j].style.width = '10px';
@@ -111,12 +118,14 @@ function zbtjTimer() {
 
 //番剧自动切换
 function fjdtTimer() {
+    var fjIndex = 0;
     if (fjdt_box.offsetLeft == -2 * fjw) {
         fjIndex = 0;
     } else {
         fjIndex++;
     }
     var leftChange = fjIndex * fjw;
+    leftChange = leftChange > (2 * fjw) ? 2 * fjw : leftChange;
     fjdt_box.style.left = -leftChange + 'px';
     for (var j = 0; j < fjdt_spans.length; j++) {
         fjdt_spans[j].style.width = '10px';
@@ -127,12 +136,14 @@ function fjdtTimer() {
 }
 //国创自动切换
 function gcTimer() {
+    var gcIndex = 0;
     if (gc_box.offsetLeft == -gcw) {
         gcIndex = 0;
     } else {
         gcIndex++;
     }
     var leftChange = gcIndex * gcw;
+    leftChange = leftChange > gcw ? gcw : leftChange;
     gc_box.style.left = -leftChange + 'px';
     for (var j = 0; j < gc_spans.length; j++) {
         gc_spans[j].style.width = '10px';
@@ -149,32 +160,44 @@ handler = function (event) {
     var left = w;
     var index = 0;
     for (var j = 0; j < spans.length; j++) {
+        spans[j].classList.remove('first');
+        spans[j].classList.add('noicon');
         spans[j].style.background = 'url(../images/icons.png) 747px -790px';
     }
     switch (target.id) {
         case "s1":
             index = 0;
             first_box.style.left = -index * left + 'px';
+            spans[index].classList.remove('noicon');
+            spans[index].classList.add('first');
             spans[index].style.background = 'url(../images/icons.png) 747px -727px';
             break;
         case "s2":
             index += 1;
             first_box.style.left = -index * left + 'px';
+            spans[index].classList.remove('noicon');
+            spans[index].classList.add('first');
             spans[index].style.background = 'url(../images/icons.png) 747px -727px';
             break;
         case "s3":
             index += 2;
             first_box.style.left = -index * left + 'px';
+            spans[index].classList.remove('noicon');
+            spans[index].classList.add('first');
             spans[index].style.background = 'url(../images/icons.png) 747px -727px';
             break;
         case "s4":
             index += 3;
             first_box.style.left = -index * left + 'px';
+            spans[index].classList.remove('noicon');
+            spans[index].classList.add('first');
             spans[index].style.background = 'url(../images/icons.png) 747px -727px';
             break;
         case "s5":
             index += 4;
             first_box.style.left = -index * left + 'px';
+            spans[index].classList.remove('noicon');
+            spans[index].classList.add('first');
             spans[index].style.background = 'url(../images/icons.png) 747px -727px';
             break;
     }

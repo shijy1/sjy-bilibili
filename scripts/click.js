@@ -198,13 +198,21 @@ window.onscroll = function () {
         }
     } else {
         fix.style.top = '234px';
-        dhChange();//不传参
+        dhChange(-1);//不传参
     }
 }
 
 //导航底部 toTop按钮
 toTop.onclick = function () {
-    document.documentElement.scrollTop = 0;
+    //document.documentElement.scrollTop = 0;
+    var pos = document.documentElement.scrollTop;
+    var speed = pos / 25;
+    var time = setInterval(function () {
+        document.documentElement.scrollTop = document.documentElement.scrollTop - speed;
+        if (document.documentElement.scrollTop == 0) {
+            clearInterval(time);
+        }
+    }, 10);
 };
 
 //事件委托函数
@@ -212,6 +220,7 @@ var vasHandler = function (event) {
     var e = event || window.event,
         target = e.target || e.srcElement;
     var vindex = target.getAttribute('data-vindex');
+    var currentPos = document.documentElement.scrollTop;
     var pos = vclick[vindex].offsetTop;
     switch (vindex) {
         case '0':
@@ -220,10 +229,22 @@ var vasHandler = function (event) {
             pos = pos - 20;
             break;
     }
+    var speed = (pos - currentPos) / 15;
     //导航条变化
     dhChange(vindex);
     //页面滚动
-    document.documentElement.scrollTop = pos;
+    var timex = setInterval(function () {
+        //不懂body元素transition为什么不行
+        document.documentElement.scrollTop = document.documentElement.scrollTop + speed;
+        if ((speed > 0) && (document.documentElement.scrollTop >= pos)) {
+            document.documentElement.scrollTop = pos;
+            clearInterval(timex);
+        } else if ((speed < 0) && (document.documentElement.scrollTop <= pos)) {
+            document.documentElement.scrollTop = pos;
+            clearInterval(timex);
+        }
+    }, 10);
+//document.documentElement.scrollTop = pos;
 };
 
 //事件委托-点击使页面跳转到指定模块
@@ -239,8 +260,10 @@ var dhChange = function (vindex) {
         vas[i].style.backgroundColor = '#fff';
         vas[i].style.color = '#000';
     }
-    vas[vindex].style.backgroundColor = '#00A1D6';
-    vas[vindex].style.color = '#fff';
+    if (vindex > -1) {
+        vas[vindex].style.backgroundColor = "#00A1D6";
+        vas[vindex].style.color = '#fff';
+    }
 };
 
 

@@ -24,12 +24,12 @@
 
         .bj .left .left_top .name {
             position: relative;
-            font-size: x-large;
+            font-size: 24px;
             left: 50px;
         }
 
         .bj .left .left_top .dh {
-            font-size: x-small;
+            font-size: 12px;
             position: relative;
             cursor: pointer;
             left: 65px;
@@ -68,7 +68,7 @@
         .bj .left .left_top .btn {
             border: 1px solid gray;
             border-radius: 5px;
-            font-size: small;
+            font-size: 12px;
             padding: 2px 6px;
             position: relative;
             float: right;
@@ -128,7 +128,7 @@
             position: relative;
             /*top: 5px;
                 display: block;*/
-            font-size: 10px;
+            font-size: 12px;
             line-height: 1.7;
             height: 40px;
             display: block;
@@ -146,7 +146,7 @@
             display: block;
             position: absolute;
             bottom: 0px;
-            font-size: 10px;
+            font-size: 12px;
             padding-top: 2px;
             transition: 0.3s ease;
             background-color: white;
@@ -188,11 +188,11 @@
     }
 
         .bjr .right .title > span {
-            font-size: large;
+            font-size: 18px;
         }
 
         .bjr .right .title a {
-            font-size: small;
+            font-size: 12px;
             position: relative;
             top: -2px;
             left: 10px;
@@ -239,7 +239,7 @@
         height: 320px;
         position: relative;
         top: 40px;
-        font-size: small;
+        font-size: 12px;
         background-color: white;
     }
 
@@ -255,7 +255,7 @@
             display: block;
             list-style-type: none;
             margin-bottom: 18px;
-            font-size: smaller;
+            font-size: 12px;
         }
 
             .bjr .right .content li a {
@@ -301,6 +301,7 @@
             }
 
         .bjr .right .content .more {
+            cursor:pointer;
             height: 22px;
             text-align: center;
             background-color: lightgray;
