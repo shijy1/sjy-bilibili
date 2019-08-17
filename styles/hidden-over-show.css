@@ -1,0 +1,240 @@
+﻿
+.overshow {
+    animation: showa .6s;
+}
+
+/*show 动画*/
+@-webkit-keyframes showa {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*zhibo mouseover*/
+.zhiboover {
+    display:none;
+    height: 222px;
+    width: 504px;
+    position: absolute;
+    border-radius: 0 0 5px 5px;
+    top: 40px;
+    left: 0px;
+    z-index: 100;
+    padding: 20px 0px 20px 20px;
+    background-color: #fff;
+}
+
+    .zhiboover > div {
+        float: left;
+    }
+
+        .zhiboover > div > span {
+            color: #EA759F;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+.zhiboover .left{
+    width:252px;
+    height:222px;
+    border-right:1px solid #EAEAEA;
+    /*background-color:#afc;*/
+}
+.zhiboover .left li{
+    display:inline-block;
+    position:relative;
+    list-style-type:none;
+    height:80px;
+    width:64px;
+    margin:15px 15px 5px 0;
+    /*background-color:#aff;*/
+}
+
+.zhiboover .left li a{
+    display:block;
+    width:100%;
+    height:64px;
+    /*background-color:#aaf;*/
+}
+.zhiboover .left li a img{
+    width:100%;
+    width:100%;
+    border-radius:32px;
+}
+
+.zhiboover .left li span{
+    display:flex;
+    height:16px;
+    width:100%;
+    /*position:relative;*/
+    text-align:center;
+    justify-content:center;
+    font-size:12px;
+    overflow:hidden;
+}
+
+.zhiboover .right{
+    width:230px;
+    height:209px;
+    padding-left:20px;
+    /*background-color:#acc;*/
+}
+.zhiboover .right a{
+    display:block;
+    width:208px;
+    height:80px;
+    position:relative;
+    top:15px;
+    margin-bottom:15px;
+    border-radius:3px;
+    overflow:hidden;
+    /*background-color:#EA759F;*/
+}
+.zhiboover .right a img{
+    height:100%;
+    width:100%;
+}
+
+/*BW mouseover*/
+.BWover {
+    display: none;
+    width: 375px;
+    height: 232px;
+    padding: 12px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    z-index: 100;
+    background-color: #fff;
+}
+
+    .BWover div {
+        position: relative;
+        height: 110px;
+        width: 375px;
+        /*background-color:#b99;*/
+    }
+
+        .BWover div span {
+            font-size: 12px;
+            color: #fff;
+            position: absolute;
+            left: 5px;
+            bottom: 3px;
+        }
+
+    .BWover .img1 {
+        background: url(../images/BW_1.jpg);
+    }
+
+    .BWover .img2 {
+        background: url(../images/BW_2.jpg);
+        position: relative;
+        top: 12px;
+    }
+
+/*下载APP mouseover*/
+.downloadover {
+    display: none;
+    width: 260px;
+    height: 174px;
+    position: absolute;
+    top: 40px;
+    left: -21px;
+    z-index: 100;
+    background: url(../images/orcode-frame.png);
+    /*background-color:#d59;*/
+}
+
+    .downloadover:before {
+        content: '';
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background: url(../images/orcode.jpg);
+        background-repeat: no-repeat;
+        background-position: center 30px;
+    }
+
+/*大会员 mouseover*/
+.bVIPover {
+    display: none;
+    height: 235px;
+    width: 232px;
+    position: absolute;
+    top: 40px;
+    left: -103px;
+    font-size: 14px;
+    color: #000;
+    border-radius: 0 0 5px 5px;
+    padding: 14px;
+    z-index: 100;
+    background: #fff;
+}
+
+    .bVIPover .img {
+        height: 140px;
+        width: 237px;
+        position: relative;
+        top: 10px;
+        /*background-color:#b11;*/
+    }
+
+        .bVIPover .img a {
+            display: inline-block;
+            height: 100%;
+            width: 76px;
+            font-size: 12px;
+        }
+
+            .bVIPover .img a span {
+                position: relative;
+                top: 5px;
+            }
+
+    .bVIPover button {
+        margin: auto;
+        width: 160px;
+        height: 32px;
+        position: relative;
+        border: 0px;
+        top: 40px;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #41B4E5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+/*消息 mouseover*/
+.messageover {
+    display: none;
+    width: 112px;
+    position: absolute;
+    top: 40px;
+    left: -35px;
+    z-index: 100;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+
+    .messageover a {
+        width: 112px;
+        height: 42px;
+        display: flex;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .messageover a:hover {
+            background-color: #E5E9EF;
+            color: #54A8DC;
+        }

@@ -1,4 +1,4 @@
-﻿.top, .parentTop::before {
+﻿.top, .blur::before {
     background: url(../images/top.png);
 }
 
@@ -6,16 +6,16 @@
     background-position: -10px -10px; /*抵消.parentTop::before的margin*/
 }
 
-.parentTop { /*毛玻璃*/
+.blur { /*毛玻璃*/
     height: 40px;
     width: 100%;
     background: hsla(0,0%,100%,0.3);
-    position: relative;
+    position: absolute;
     overflow: hidden;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-    .parentTop::before {
+    .blur::before {
         content: "";
         position: absolute;
         top: 0;
@@ -27,14 +27,20 @@
         z-index: 0;
     }
 
-    .parentTop > ul {
-        position: relative;
-        height: inherit;
-        width: 500px;
-        left: 125px;
-        list-style-type: none;
-        /*background-color: red;*/
-    }
+.parentTop > ul {
+    position: relative;
+    height: inherit;
+    width: 500px;
+    left: 125px;
+    list-style-type: none;
+    /*background-color: red;*/
+}
+
+.parentTop {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
 
     .parentTop > .right {
         width: 350px;
@@ -42,21 +48,24 @@
         top: -40px;
     }
 
-    .parentTop > ul li {
+    .parentTop > ul > li {
+        display:block;
+        position:relative;/*8.15*/
         height: 32px;
         padding-top: 8px;
         /*background-color: pink;*/
         float: left; /*或者：display:inline-block;*/
     }
 
-        .parentTop > ul li a {
+        .parentTop > ul > li > a {
             padding: 13px 7px;
             /*background-color: greenyellow;*/
             cursor: pointer;
+            color:#000;
             font-size: 12px;
         }
 
-        .parentTop > ul li:hover {
+        .parentTop > ul > li:hover {
             background-color: rgba(255,255,255,0.5);
         }
 
@@ -81,7 +90,7 @@
     text-align: center;
     padding-top: 9px;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 0 0 5px 5px;
 }
 
@@ -92,7 +101,6 @@
     top: 120px;
     width: 330px;
     height: 25px;
-    background:
 }
 
     .paihang a {
@@ -119,10 +127,10 @@
     top: -34px;
     height: 34px;
     width: 240px;
-    font-size:12px;
+    font-size: 12px;
     border-radius: 5px;
     border: 0;
-    text-indent:1em;
+    text-indent: 1em;
 }
 
 #search {
@@ -143,5 +151,3 @@
     content: "";
     background-color: white;
 }
-
-

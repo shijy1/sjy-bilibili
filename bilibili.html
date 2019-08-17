@@ -13,38 +13,94 @@
     <link href="styles/different.css" rel="stylesheet" />
     <link href="styles/last.css" rel="stylesheet" />
     <link href="styles/qiehuan.css" rel="stylesheet" />
+    <link href="styles/hidden-over-show.css" rel="stylesheet" />
     <style type="text/css">
         a {
+            text-decoration: none;
             cursor: pointer;
         }
-        body{
-            transition:all 1s ease;
+        img {
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="top">
+        <div class="blur">
+
+        </div>
         <div class="parentTop">
             <ul class="left">
-                <li><a id="icon">主站</a></li>
-                <li><a>音频</a></li>
-                <li><a>游戏中心</a></li>
-                <li><a>直播</a></li>
-                <li><a>会员购</a></li>
-                <li><a>漫画</a></li>
-                <li><a>BW</a></li>
-                <li><a>十周年</a></li>
-                <li><a id="icon2">下载APP</a></li>
+                <li><a title="主站" id="icon">主站</a></li>
+                <li><a title="来探索bilibili音乐的世界吧~" href="" target="_blank">音频</a></li>
+                <li>
+                    <a over="true" title="游戏中心" href="" target="_blank">游戏中心</a>
+                    <div class="overshow gameover"></div>
+                </li>
+                <li>
+                    <a over="true" title="直播" href="" target="_blank">直播</a>
+                    <div class="overshow zhiboover">
+                        <div class="left">
+                            <span>热门直播：</span>
+                            <ul>
+                                <li><a><img src="images/zbover-l-1.jpg" /></a><span>哔哩哔哩刀塔2赛事</span></li>
+                                <li><a><img src="images/zbover-l-2.jpg" /></a><span>臧贺Lunmta</span></li>
+                                <li><a><img src="images/zbover-l-3.jpg" /></a><span>痒局长</span></li>
+                                <li><a><img src="images/zbover-l-4.jpg" /></a><span>Bluess-</span></li>
+                                <li><a><img src="images/zbover-l-5.jpg" /></a><span>10号直播间</span></li>
+                                <li><a><img src="images/zbover-l-6.jpg" /></a><span>苏塘主</span></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <span>热门活动：</span>
+                            <a><img src="images/zbover-r-1.png" /></a>
+                            <a><img src="images/zbover-r-2.png" /></a>
+                        </div>
+                    </div>
+                </li>
+                <li><a title="会员购" href="" target="_blank">会员购</a></li>
+                <li><a title="漫画" href="" target="_blank">漫画</a></li>
+                <li>
+                    <a over="true" href="" target="_blank">BW</a>
+                    <div class="overshow BWover">
+                        <div class="img1"><span>BW2019 08.16-08.18 首站广州起航</span></div>
+                        <div class="img2"><span>BML广州副本已更新</span></div>
+                    </div>
+                </li>
+                <li><a title="十周年" href="" target="_blank">十周年</a></li>
+                <li>
+                    <a over="true" id="icon2">下载APP</a>
+                    <div class="overshow downloadover"></div>
+                </li>
             </ul>
             <ul class="right">
                 <!--圆头像-->
-
-                <li><a>大会员</a></li>
-                <li><a>消息</a></li>
-                <li><a>动态</a></li>
-                <li><a>稍后再看</a></li>
-                <li><a>收藏</a></li>
-                <li><a>历史</a></li>
+                <li>
+                    <a over="true" title="消息" href="" target="_blank">大会员</a>
+                    <div class="overshow bVIPover">
+                        <span>精彩推荐</span>
+                        <div class="img">
+                            <a><img src="images/bVIP_1.jpg" /><span>花嫁初音等你带回家！</span></a>
+                            <a><img src="images/bVIP_2.jpg" /><span>灵笼正在热播 大会员抢先看</span></a>
+                            <a><img src="images/bVIP_3.jpg" /><span>哈利·波特与魔法石</span></a>
+                        </div>
+                        <button>开通大会员</button>
+                    </div>
+                </li>
+                <li>
+                    <a over="true" title="消息" href="" target="_blank">消息</a>
+                    <div class="overshow messageover">
+                        <a>回复我的</a>
+                        <a>@我的</a>
+                        <a>收到的赞</a>
+                        <a>系统通知</a>
+                        <a>我的消息</a>
+                    </div>
+                </li>
+                <li><a href="" target="_blank">动态</a></li>
+                <li><a href="" target="_blank">稍后再看</a></li>
+                <li><a href="" target="_blank">收藏</a></li>
+                <li><a href="" target="_blank">历史</a></li>
             </ul>
         </div>
         <div class="tougao">投稿</div>
@@ -1996,6 +2052,11 @@
             </div>
         </div>
         <div class="vMenu">
+            <!--排序8.13-->
+            <!--<div class="open">
+                <div class="tip-img"></div>
+            </div>-->
+
             <div class="fix">
                 <div class="box">
                     <a data-vindex="0">直播</a>
@@ -2061,5 +2122,6 @@
     </div>
     <script src="scripts/click.js"></script>
     <script src="scripts/qiehuan.js"></script>
+    <script src="scripts/over.js"></script>
 </body>
 </html>
