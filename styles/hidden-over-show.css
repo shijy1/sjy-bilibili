@@ -1,5 +1,10 @@
 ﻿
 .overshow {
+    display: none;
+    position: absolute;
+    top: 40px;
+    z-index: 100;
+    background-color: #fff;
     animation: showa .6s;
 }
 
@@ -14,18 +19,107 @@
     }
 }
 
+/*game mouseover*/
+.gameover {
+    height: 236px;
+    width: 450px;
+    padding: 10px 0px 10px 0;
+    border-radius: 0 0 5px 5px;
+}
+
+    .gameover > div {
+        float: left;
+    }
+
+    .gameover .left {
+        width: 265px;
+        height: 100%;
+    }
+
+        .gameover .left > div {
+            width: 240px;
+            height: 128px;
+            position: relative;
+            left: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+            .gameover .left > div a, .gameover .left > div img {
+                width: 100%;
+                height: 100%;
+            }
+
+        .gameover .left > a {
+            width: 64px;
+            height: 104px;
+            padding: 10px 12px 0;
+            float: left;
+            /*background:#b22;*/
+        }
+
+            .gameover .left > a img {
+                display: block;
+                width: 64px;
+                height: 64px;
+                border-radius: 10px;
+            }
+
+            .gameover .left > a span {
+                display: block;
+                width: 100%;
+                height: 18px;
+                font-size: 14px;
+                margin-top: 10px;
+                text-align: center;
+                overflow: hidden;
+            }
+
+    .gameover .right {
+        width: 185px;
+        height: 235px;
+        z-index: 150;
+        box-shadow: -5px 0px 4px -4px #B5B5B2;
+    }
+
+        .gameover .right .title {
+            height: 30px;
+            width: 96px;
+            position: relative;
+            left: -6px;
+            background: url(../images/gameover_r.jpg) no-repeat;
+        }
+
+        .gameover .right ul {
+            position: relative;
+            top: -12px;
+        }
+
+            .gameover .right ul li {
+                list-style-type: none;
+                height: 28px;
+            }
+
+                .gameover .right ul li a {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    font-size: 12px;
+                    align-items: center;
+                    text-indent: 15px;
+                }
+
+                    .gameover .right ul li a:hover {
+                        background-color: #E6E9EF;
+                        color: #3BA0D6;
+                    }
+
 /*zhibo mouseover*/
 .zhiboover {
-    display:none;
     height: 222px;
     width: 504px;
-    position: absolute;
     border-radius: 0 0 5px 5px;
-    top: 40px;
-    left: 0px;
-    z-index: 100;
     padding: 20px 0px 20px 20px;
-    background-color: #fff;
 }
 
     .zhiboover > div {
@@ -101,15 +195,9 @@
 
 /*BW mouseover*/
 .BWover {
-    display: none;
     width: 375px;
     height: 232px;
     padding: 12px;
-    position: absolute;
-    top: 40px;
-    left: 0px;
-    z-index: 100;
-    background-color: #fff;
 }
 
     .BWover div {
@@ -139,13 +227,9 @@
 
 /*下载APP mouseover*/
 .downloadover {
-    display: none;
     width: 260px;
     height: 174px;
-    position: absolute;
-    top: 40px;
     left: -21px;
-    z-index: 100;
     background: url(../images/orcode-frame.png);
     /*background-color:#d59;*/
 }
@@ -164,18 +248,13 @@
 
 /*大会员 mouseover*/
 .bVIPover {
-    display: none;
     height: 235px;
     width: 232px;
-    position: absolute;
-    top: 40px;
     left: -103px;
     font-size: 14px;
     color: #000;
     border-radius: 0 0 5px 5px;
     padding: 14px;
-    z-index: 100;
-    background: #fff;
 }
 
     .bVIPover .img {
@@ -215,14 +294,10 @@
 
 /*消息 mouseover*/
 .messageover {
-    display: none;
     width: 112px;
-    position: absolute;
-    top: 40px;
     left: -35px;
-    z-index: 100;
-    background-color: #fff;
     border-radius: 0 0 5px 5px;
+    overflow: hidden;
 }
 
     .messageover a {
@@ -238,3 +313,87 @@
             background-color: #E5E9EF;
             color: #54A8DC;
         }
+
+
+/*index mouseover*/
+/*动画 mouseover*/
+.index-over {
+    display:none;
+    width: 130px;
+    position: absolute;
+    top: 55px;
+    left: -10px;
+    z-index: 100;
+    /*overflow: hidden;*/
+    border-radius: 0 0 5px 5px;
+    background: #fff;
+}
+
+    .index-over li {
+        width: 100%;
+        list-style-type: none;
+        height: 30px;
+    }
+
+        .index-over li:hover {
+            background-color: #E5E9EF;
+        }
+
+        .index-over li a {
+            height: 100%;
+            width: 100%;
+            z-index:223;
+            position: relative;
+        }
+        /*.index-over li a > span span{
+            display:inline-block;
+            width:20px;
+            height:30px;
+            position:relative;
+            left:100px;
+            z-index:222;
+            transition:0.2s linear;
+            background: url(../images/icons2.png) 6px -1576px no-repeat;
+        }*/
+
+        /*伪元素方法*/
+            /*.index-over li a:after {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                top: 17px;
+                left: 120px;
+                bottom: 0;
+                right: 0;
+                background: url(../images/icons2.png) 10px -1576px no-repeat;
+            }*/
+
+            .index-over li a > span {
+                height: 100%;
+                width: 100%;
+                position: relative;
+                left: 0px;
+                font-size: 12px;
+                display: flex;
+                background-color: transparent;
+                align-items: center;
+                padding-left: 23px;
+                transition:0.2s ease;
+                background: url(../images/icons2.png) 10px -1613px no-repeat;
+            }
+.fjover{
+    width:110px;
+}
+.gcover{
+    width:116px;
+}
+.yyover{
+    width:140px;
+}
+.lifeover{
+    width:140px;
+}
+.gcover{
+    width:140px;
+}
