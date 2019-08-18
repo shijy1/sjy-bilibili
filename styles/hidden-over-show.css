@@ -216,11 +216,11 @@
         }
 
     .BWover .img1 {
-        background: url(../images/BW_1.jpg);
+        background: url(../images/BW_1.png);
     }
 
     .BWover .img2 {
-        background: url(../images/BW_2.jpg);
+        background: url(../images/BW_2.png);
         position: relative;
         top: 12px;
     }
