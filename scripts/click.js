@@ -1,21 +1,106 @@
-﻿var upgrate = document.getElementsByClassName('js_upgrate'),
-    dongtai = document.getElementsByClassName('js_dongtai');
-var btn_read = document.getElementsByClassName('btn1');
-//alert(btn_read[0].length);
-var btn_more = document.getElementsByClassName('btn2');
-var miaoshu = document.querySelectorAll('.bj .left > .content a > span');
-var pN = document.querySelectorAll('.bj .left > .content a .playNum');
-
-var qb = document.getElementsByClassName('ph_qb');
-var yc = document.getElementsByClassName('ph_yc');
-
-//竖导航
+﻿//竖导航
 var vas = document.querySelectorAll('.vMenu .fix .box a');
 var fix = document.querySelector('.Content > .vMenu .fix');
 var vclick = document.getElementsByClassName('vclick');
 var toTop = document.getElementsByClassName('toTop')[0];
 
+//******************跨浏览器事件对象******************
+var EventDeal = {
+    addHandler: function (element, name, handler) {
+        if (window.addEventListener) {
+            element.addEventListener(name, handler, false);
+        } else if (window.atachEvent) {
+            element.attachEvent('on' + name, handler);
+        } else {
+            let name = 'on' + name;
+            element.name = handler;
+        }
+    },
+    removeHandler: function (element, name, handler) {
+        if (window.removeEventListener) {
+            element.removeHandler(name, handler, false);
+        } else if (window.detachEvent) {
+            element.detachEvent('on' + name, handler);
+        } else {
+            let name = 'on' + name;
+            element.name = handler;
+        }
+    },
+    getEvent: function (event) {
+        return event || window.event;
+    },
+    getTarget: function (event) {
+        return event.target || event.srcElement;
+    },
+    preventDefault: function (event) {
+        if (event.preventDefault()) {
+            event.preventDefault();
+        } else {
+            event.returnValue = false;
+        }
+    },
+    stopPropagation: function (event) {
+        if (event.stopPropagation()) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
+        }
+    }
+};
 
+var bigBox = document.querySelector('.Content > .box');
+
+//bigBox的click事件
+var bigHandler = function (event) {
+    var event = EventDeal.getEvent(event),
+        target = EventDeal.getTarget(event);
+    if (event.type === 'click') {
+        switch (target.className) {
+            case 'dh dongtai js_dongtai':
+                var con = target.parentNode.parentNode.getElementsByClassName('content');
+                var conSpan = target.parentNode.getElementsByTagName('span');
+                target.style.color = '#3B9ED5';
+                target.nextElementSibling.style.color = '#000';
+                conSpan[0].style.display = 'block';
+                conSpan[1].style.display = 'none';
+                con[2].style.display = 'none';
+                con[1].style.display = 'block';
+                break;
+            case 'dh upgrate js_upgrate':
+                var con = target.parentNode.parentNode.getElementsByClassName('content');
+                var conSpan = target.parentNode.getElementsByTagName('span');
+                target.style.color = '#3B9ED5';
+                target.previousElementSibling.style.color = '#000';
+                conSpan[0].style.display = 'none';
+                conSpan[1].style.display = 'block';
+                con[2].style.display = 'block';
+                con[1].style.display = 'none';
+                break;
+            case 'ph_qb':
+                var con = target.parentNode.parentNode.getElementsByClassName('main');
+                var conSpan = target.parentNode.getElementsByTagName('span');
+                target.style.color = '#3B9ED5';
+                target.nextElementSibling.style.color = '#000';
+                conSpan[2].style.display = 'none';
+                conSpan[1].style.display = 'block';
+                con[1].style.display = 'none';
+                con[0].style.display = 'block';
+                break;
+            case 'ph_yc':
+                var con = target.parentNode.parentNode.getElementsByClassName('main');
+                var conSpan = target.parentNode.getElementsByTagName('span');
+                target.style.color = '#3B9ED5';
+                target.previousElementSibling.style.color = '#000';
+                conSpan[1].style.display = 'none';
+                conSpan[2].style.display = 'block';
+                con[0].style.display = 'none';
+                con[1].style.display = 'block';
+                break;
+        }
+    }
+};
+
+EventDeal.addHandler(bigBox, 'click', bigHandler);
 
 
 function fj() {
@@ -49,118 +134,74 @@ function fj() {
 };
 
 
-//排行切换
-for (var i in qb) {
-    qb[i].onclick = phChange;
-}
-for (var i in yc) {
-    yc[i].onclick = phChange_a;
-}
 
-function phChange() {
-    var s = this.parentNode.parentNode.getElementsByClassName('main');
-    var d = this.parentNode.getElementsByTagName('span');
-    d[2].style.display = 'none';
-    d[1].style.display = 'block';
-    s[1].style.display = 'none';
-    s[0].style.display = 'block';
-}
-function phChange_a() {
-    var s = this.parentNode.parentNode.getElementsByClassName('main');
-    var d = this.parentNode.getElementsByTagName('span');
-    d[1].style.display = 'none';
-    d[2].style.display = 'block';
-    s[0].style.display = 'none';
-    s[1].style.display = 'block';
-}
+//----------------播放数弹幕数悬浮下滑------------------
+var titles = document.querySelectorAll('.bj .left > .content a > span');
+var pN = document.querySelectorAll('.bj .left > .content a .playNum');
 
-//播放数弹幕数悬浮下滑
-for (var i in miaoshu) {
-    // = pN[i].onmouseover 
-    miaoshu[i].onmouseover = xiaHua;
-    miaoshu[i].onmouseleave = xiaHua_a;
+for (var i in titles) {
+    titles[i].onmouseenter = slideEnter;
+    titles[i].onmouseleave = slideLeave;
 }
 for (var i in pN) {
-    // = pN[i].onmouseover 
-    pN[i].onmouseover = function () { this.style.bottom = '-18px'; };
+    pN[i].onmouseenter = function () { this.style.bottom = '-18px'; };
     pN[i].onmouseleave = function () { this.style.bottom = '0px'; };
 }
-//播放数弹幕数悬浮下滑
-function xiaHua() {
+//执行函数
+function slideEnter() {
     this.parentNode.getElementsByClassName('playNum')[0].style.bottom = '-18px';
 }
-
-function xiaHua_a() {
+function slideLeave() {
     this.parentNode.getElementsByClassName('playNum')[0].style.bottom = '0px';
 }
 
 
-//alert(bj_dongtai.length+','+bj_upgrate.length);
-for (var i in upgrate) {
-    //赋给事件的是函数名,  并没有参数的括号和参数,那样会出错--why？
-    //传参：onclick事件事件后定义一个方法, 我们可以在方法体中调用我们真正的方法并传入我们想要的参数,
-    upgrate[i].onclick = gengHuan;
-};
-for (var i in dongtai) {
-    dongtai[i].onclick = gengHuan_a;
-};
 
-//icon_read旋转
-for (var i in btn_read) {
-    btn_read[i].onmouseover = iRead;
-    btn_read[i].onmouseleave = iRead_a;
+//---------新动态刷新和更多按钮--------
+var btn_refresh = document.getElementsByClassName('btn1'),
+    btn_more = document.getElementsByClassName('btn2');
+
+//刷新
+for (var i in btn_refresh) {
+    btn_refresh[i].onmouseenter = refreshEnter;
+    btn_refresh[i].onmouseleave = refreshLeave;
 }
 
-//icon_more分合
+//更多
 for (var i in btn_more) {
-    btn_more[i].onmouseover = iMore;
-    btn_more[i].onmouseleave = iMore_a;
+    btn_more[i].onmouseenter = moreEnter;
+    btn_more[i].onmouseleave = moreLeave;
 }
 
-//icon_more分合
-function iMore() {
-    this.getElementsByTagName('div')[0].style.transform = 'translateX(3px)';
-    this.getElementsByTagName('span')[0].style.transform = 'translateX(-2px)';
-    this.getElementsByTagName('div')[0].style.transition = '0.3s ease';
-    this.getElementsByTagName('span')[0].style.transition = '0.3s ease';
+//刷新mouseenter
+function moreEnter() {
+    var l = this.getElementsByTagName('div')[0],
+        r = this.getElementsByTagName('span')[0];
+    l.style.transform = 'translateX(3px)';
+    r.style.transform = 'translateX(-2px)';
+    l.style.transition = '0.3s ease';
+    r.style.transition = '0.3s ease';
 }
-function iMore_a() {
-    this.getElementsByTagName('div')[0].style.transform = 'translateX(0px)';
-    this.getElementsByTagName('span')[0].style.transform = 'translateX(0px)';
-}
-
-//icon_read旋转
-function iRead() {
-    this.getElementsByTagName('div')[0].style.transform = 'rotate(180deg)';
-    this.getElementsByTagName('div')[0].style.transition = '0.6s ease';
-}
-
-function iRead_a() {
-    this.getElementsByTagName('div')[0].style.transform = 'rotate(-180deg)';
-    this.getElementsByTagName('div')[0].style.transition = '0.6s ease';
+//刷新mouseleave
+function moreLeave() {
+    var l = this.getElementsByTagName('div')[0],
+        r = this.getElementsByTagName('span')[0];
+    l.style.transform = 'translateX(0px)';
+    r.style.transform = 'translateX(0px)';
 }
 
-//切换
-function gengHuan() {
-    var s = this.parentNode.parentNode.getElementsByClassName('content');
-    var d = this.parentNode.getElementsByTagName('span');
-    d[0].style.display = 'none';
-    d[1].style.display = 'block';
-    s[1].style.display = 'none';
-    s[2].style.display = 'block';
-};
-function gengHuan_a() {
-    var s = this.parentNode.parentNode.getElementsByClassName('content');
-    var d = this.parentNode.getElementsByTagName('span');
-    d[0].style.display = 'block';
-    d[1].style.display = 'none';
-    s[2].style.display = 'none';
-    s[1].style.display = 'block';
-};
-
-
-
-
+//更多mouseenter
+function refreshEnter() {
+    var circle = this.getElementsByTagName('div')[0];
+    circle.style.transform = 'rotate(180deg)';
+    circle.style.transition = '0.6s ease';
+}
+//更多mouseleave
+function refreshLeave() {
+    var circle = this.getElementsByTagName('div')[0];
+    circle.style.transform = 'rotate(-180deg)';
+    circle.style.transition = '0.6s ease';
+}
 
 
 

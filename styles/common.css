@@ -35,6 +35,9 @@
             left: 65px;
             top: -2px;
         }
+        .bj .left .left_top .dh:hover{
+            color:#3B9ED5!important;
+        }
 
         .bj .left .left_top .dongtai {
             color: #3B9ED5;
@@ -198,7 +201,9 @@
             left: 10px;
             margin-right: 8px;
         }
-
+        .bjr .right .title a:hover{
+            color:#3B9ED5!important;
+        }
         .bjr .right .title .ph_qb {
             color: #3B9ED5;
         }
