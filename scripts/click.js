@@ -4,6 +4,12 @@ var fix = document.querySelector('.Content > .vMenu .fix');
 var vclick = document.getElementsByClassName('vclick');
 var toTop = document.getElementsByClassName('toTop')[0];
 
+//获得番剧和国创week li
+var weekLis = document.querySelectorAll('.wl .left .left_top .weekend li');
+//获得番剧和国创week content
+var weekCons = document.querySelectorAll('.wl .left > .content > div');
+
+
 //******************跨浏览器事件对象******************
 var EventDeal = {
     addHandler: function (element, name, handler) {
@@ -56,27 +62,31 @@ var bigHandler = function (event) {
         target = EventDeal.getTarget(event);
     if (event.type === 'click') {
         switch (target.className) {
-            case 'dh dongtai js_dongtai':
+            case 'dh dongtai js_dongtai'://"有新动态"
                 var con = target.parentNode.parentNode.getElementsByClassName('content');
                 var conSpan = target.parentNode.getElementsByTagName('span');
                 target.style.color = '#3B9ED5';
                 target.nextElementSibling.style.color = '#000';
+                //span切换
                 conSpan[0].style.display = 'block';
                 conSpan[1].style.display = 'none';
+                //content切换
                 con[2].style.display = 'none';
                 con[1].style.display = 'block';
                 break;
-            case 'dh upgrate js_upgrate':
+            case 'dh upgrate js_upgrate'://"最新投稿"
                 var con = target.parentNode.parentNode.getElementsByClassName('content');
                 var conSpan = target.parentNode.getElementsByTagName('span');
                 target.style.color = '#3B9ED5';
                 target.previousElementSibling.style.color = '#000';
+                //span切换
                 conSpan[0].style.display = 'none';
                 conSpan[1].style.display = 'block';
+                //content切换
                 con[2].style.display = 'block';
                 con[1].style.display = 'none';
                 break;
-            case 'ph_qb':
+            case 'ph_qb'://"全部"
                 var con = target.parentNode.parentNode.getElementsByClassName('main');
                 var conSpan = target.parentNode.getElementsByTagName('span');
                 target.style.color = '#3B9ED5';
@@ -86,7 +96,7 @@ var bigHandler = function (event) {
                 con[1].style.display = 'none';
                 con[0].style.display = 'block';
                 break;
-            case 'ph_yc':
+            case 'ph_yc'://"原创"
                 var con = target.parentNode.parentNode.getElementsByClassName('main');
                 var conSpan = target.parentNode.getElementsByTagName('span');
                 target.style.color = '#3B9ED5';
@@ -96,42 +106,52 @@ var bigHandler = function (event) {
                 con[0].style.display = 'none';
                 con[1].style.display = 'block';
                 break;
+            case 'week0'://整个week的事件类似
+            case 'week1':
+            case 'week2':
+            case 'week3':
+            case 'week4':
+            case 'week5':
+            case 'week6':
+            case 'week7':
+                var i, num, weekArr = [];
+                //取得所有week的innerHTML存入weeekArr
+                for (var i = 0; i < weekLis.length; i++) {
+                    weekArr.push(weekLis[i].getAttribute('data-name') + '<span></span>');
+                }
+
+                //获取自定义id
+                var fId = target.getAttribute('data-id');
+                //判断是番剧week还是国创week
+                if (target.parentNode.parentNode.id === 'fjweek') {
+                    i = 0;
+                    num = weekLis.length / 2;
+                } else if (target.parentNode.parentNode.id === 'gcweek') {
+                    i = weekLis.length / 2;
+                    num = weekLis.length;
+                }
+
+                //初始化
+                for (; i < num; i++) {
+                    weekLis[i].innerHTML = weekArr[i];
+                    weekLis[i].firstElementChild.style.display = 'none';
+                    weekLis[i].style.color = ' #000';
+                    weekCons[i].style.display = 'none';
+                }
+                if (target.className != 'week0') {
+                    target.innerHTML = '周' + target.innerHTML;
+                }
+
+                target.style.color = ' #3B9ED5';
+                target.firstElementChild.style.display = 'block';
+                weekCons[fId].style.display = 'block';
+                break;
         }
     }
 };
 
+//bigBox注册事件
 EventDeal.addHandler(bigBox, 'click', bigHandler);
-
-
-function fj() {
-
-    //var span = this.getElementsByTagName('span');
-    var index = this.getElementsByTagName('span')[0].className;
-    for (var j = 1; j < fj_week.length; j++) {
-        fj_week[0].style.color = '#000000';
-        //fj_week[0].getElementsByTagName('span')[0].style.display = 'none';
-        fj_week[j].innerText = fj_week[j].innerText.charAt(fj_week[j].innerText.length - 1);
-        //fj_week[j].getElementsByTagName('span')[0].style.display = 'none';
-        fj_week[j].style.color = '#000000';
-    }
-
-    if (this.innerText != '最新') {
-        this.innerText = '周' + this.innerText;
-    }
-    this.style.color = '#3B9ED5';
-    //alert(index);
-    for (var k = 0; k < fj_content.length; k++) {
-        fj_content[k].style.display = 'none';
-        //fj_content[k].classList.remove('contentShow');
-    }
-    for (var k in fj_content) {
-
-        //
-    }
-    var content = this.parentNode.parentNode.parentNode.parentNode.getElementsByClassName(index);
-    content[0].style.display = 'block';
-    //span[0].style.display = 'block';
-};
 
 
 

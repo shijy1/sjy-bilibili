@@ -179,7 +179,7 @@
     }
 
     .wl .left .left_top .weekend {
-        width: 470px;
+        width: 440px;
         height: 30px;
         position: relative;
         top: -25px;
@@ -193,20 +193,23 @@
             width: 40px;
             list-style-type: none;
             font-size: 18px;
+            user-select:none;
             float: left;
             text-align: center;
             margin-right: 15px;
             cursor: pointer;
             /*background-color: pink;*/
         }
-
+        .wl .left .left_top .weekend li:hover{
+            color:#3B9ED5!important;
+        }
             .wl .left .left_top .weekend li span {
                 display: none;
                 height: 1px;
                 width: 55px;
                 position: relative;
                 left: -8px;
-                top: 5px;
+                top: 6.5px;
                 background-color: #3B9ED5;
                 z-index: 1;
             }
@@ -221,8 +224,10 @@
                     left: 23px;
                     top: -7px;
                 }
-
-            .wl .left .left_top .weekend li .contentNew {
+            .wl .left .left_top .weekend .week0{
+                color:#3B9ED5;
+            }
+            .wl .left .left_top .weekend .week0 span {
                 display: block;
             }
 
@@ -298,11 +303,11 @@
     .wl .left > .content .content div {
         display: inline-block;
         height: 72px;
-        width: 180px;
+        width: 185px;
         float: left;
         position: relative;
         font-size: 12px;
-        margin-right: 46px;
+        margin-right: 41px;
         /*background-color:darkgray;*/
     }
 
