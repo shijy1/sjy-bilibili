@@ -1,8 +1,4 @@
-﻿//竖导航
-var vas = document.querySelectorAll('.vMenu .fix .box a');
-var fix = document.querySelector('.Content > .vMenu .fix');
-var vclick = document.getElementsByClassName('vclick');
-var toTop = document.getElementsByClassName('toTop')[0];
+﻿
 
 //获得番剧和国创week li
 var weekLis = document.querySelectorAll('.wl .left .left_top .weekend li');
@@ -62,6 +58,16 @@ var bigHandler = function (event) {
         target = EventDeal.getTarget(event);
     if (event.type === 'click') {
         switch (target.className) {
+            case 'toTop':
+                let pos = document.documentElement.scrollTop;
+                let speed = pos / 25;
+                let time = setInterval(function () {
+                    document.documentElement.scrollTop = document.documentElement.scrollTop - speed;
+                    if (document.documentElement.scrollTop == 0) {
+                        clearInterval(time);
+                    }
+                }, 10);
+                break;
             case 'dh dongtai js_dongtai'://"有新动态"
                 var con = target.parentNode.parentNode.getElementsByClassName('content');
                 var conSpan = target.parentNode.getElementsByTagName('span');
@@ -159,20 +165,29 @@ EventDeal.addHandler(bigBox, 'click', bigHandler);
 var titles = document.querySelectorAll('.bj .left > .content a > span');
 var pN = document.querySelectorAll('.bj .left > .content a .playNum');
 
-for (var i in titles) {
-    titles[i].onmouseenter = slideEnter;
-    titles[i].onmouseleave = slideLeave;
-}
-for (var i in pN) {
-    pN[i].onmouseenter = function () { this.style.bottom = '-18px'; };
-    pN[i].onmouseleave = function () { this.style.bottom = '0px'; };
-}
 //执行函数
-function slideEnter() {
+var slideEnter = function (event) {
     this.parentNode.getElementsByClassName('playNum')[0].style.bottom = '-18px';
 }
-function slideLeave() {
+var slideLeave = function (event) {
     this.parentNode.getElementsByClassName('playNum')[0].style.bottom = '0px';
+}
+
+//pN执行函数
+var pNslideDown = function (event) {
+    this.style.bottom = '-18px';
+}
+var pNslideUp = function (event) {
+    this.style.bottom = '0px';
+}
+
+for (var i = 0; i < titles.length; i++) {
+    EventDeal.addHandler(titles[i], 'mouseenter', slideEnter);
+    EventDeal.addHandler(titles[i], 'mouseleave', slideLeave);
+}
+for (var i = 0; i < pN.length; i++) {
+    EventDeal.addHandler(pN[i], 'mouseenter', pNslideDown);
+    EventDeal.addHandler(pN[i], 'mouseleave', pNslideUp);
 }
 
 
@@ -181,57 +196,64 @@ function slideLeave() {
 var btn_refresh = document.getElementsByClassName('btn1'),
     btn_more = document.getElementsByClassName('btn2');
 
-//刷新
-for (var i in btn_refresh) {
-    btn_refresh[i].onmouseenter = refreshEnter;
-    btn_refresh[i].onmouseleave = refreshLeave;
-}
-
-//更多
-for (var i in btn_more) {
-    btn_more[i].onmouseenter = moreEnter;
-    btn_more[i].onmouseleave = moreLeave;
-}
-
 //刷新mouseenter
-function moreEnter() {
-    var l = this.getElementsByTagName('div')[0],
+var refreshEnter = function (event) {
+    let circle = this.getElementsByTagName('div')[0];
+    circle.style.transform = 'rotate(180deg)';
+    circle.style.transition = '0.6s ease';
+}
+//刷新mouseleave
+var refreshLeave = function (event) {
+    let circle = this.getElementsByTagName('div')[0];
+    circle.style.transform = 'rotate(-180deg)';
+    circle.style.transition = '0.6s ease';
+}
+
+//更多mouseenter
+var moreEnter = function (event) {
+    let l = this.getElementsByTagName('div')[0],
         r = this.getElementsByTagName('span')[0];
     l.style.transform = 'translateX(3px)';
     r.style.transform = 'translateX(-2px)';
     l.style.transition = '0.3s ease';
     r.style.transition = '0.3s ease';
 }
-//刷新mouseleave
-function moreLeave() {
-    var l = this.getElementsByTagName('div')[0],
+//更多mouseleave
+var moreLeave = function (event) {
+    let l = this.getElementsByTagName('div')[0],
         r = this.getElementsByTagName('span')[0];
     l.style.transform = 'translateX(0px)';
     r.style.transform = 'translateX(0px)';
 }
 
-//更多mouseenter
-function refreshEnter() {
-    var circle = this.getElementsByTagName('div')[0];
-    circle.style.transform = 'rotate(180deg)';
-    circle.style.transition = '0.6s ease';
+
+//刷新
+for (let i = 0; i < btn_refresh.length; i++) {
+    EventDeal.addHandler(btn_refresh[i], 'mouseenter', refreshEnter);
+    EventDeal.addHandler(btn_refresh[i], 'mouseleave', refreshLeave);
 }
-//更多mouseleave
-function refreshLeave() {
-    var circle = this.getElementsByTagName('div')[0];
-    circle.style.transform = 'rotate(-180deg)';
-    circle.style.transition = '0.6s ease';
+//for (var i in btn_refresh) {
+//    btn_refresh[i].onmouseenter = refreshEnter;
+//    btn_refresh[i].onmouseleave = refreshLeave;
+//}
+
+//更多
+for (let i = 0; i < btn_more.length; i++) {
+    EventDeal.addHandler(btn_more[i], 'mouseenter', moreEnter);
+    EventDeal.addHandler(btn_more[i], 'mouseleave', moreLeave);
 }
+
 
 
 
 //***************竖导航事件实现******************
+
 //竖导航元素获取
-var vas = document.querySelectorAll('.vMenu .fix .box a'),
-    vbox = document.querySelector('.vMenu .fix .box'),
+var vas = document.querySelectorAll('.vMenu .fix .box #bigd a'),
+    vbox = document.querySelector('.vMenu .fix .box #bigd'),
     fix = document.querySelector('.Content > .vMenu .fix'),
-    vclick = document.getElementsByClassName('vclick'),
-    toTop = document.getElementsByClassName('toTop')[0];
+    vclick = document.getElementsByClassName('vclick');
+//toTop = document.getElementsByClassName('toTop')[0];
 
 //获取模块数量，设置index
 var vlength = vas.length,
@@ -245,8 +267,9 @@ var minus = Math.max((clientH - slideH), 0);//页面高度可能小于导航条�
 var posH = minus / 2;
 //alert(posH);
 
-//监听页面滚动事件
-window.onscroll = function () {
+
+//页面滚动监听事件执行函数
+var windowScrolled = function (event) {
     var scrolltop = document.documentElement.scrollTop;
     if (scrolltop > 243) {
         fix.style.top = posH + 'px';//滚动超过243，使导航条居中显示
@@ -254,7 +277,9 @@ window.onscroll = function () {
         for (var j = 0; j < vclick.length; j++) {
             //当该模块的顶部超过视口中线往上100px时，导航条跳转到对应部分
             if ((vclick[j].offsetTop - scrolltop) < (clientH / 2 - 100)) {
-                dhChange(j);
+                if (!can) {
+                    dhChange(j);
+                }
             }
         }
     } else {
@@ -263,26 +288,15 @@ window.onscroll = function () {
     }
 }
 
-//导航底部 toTop按钮
-toTop.onclick = function () {
-    //document.documentElement.scrollTop = 0;
-    var pos = document.documentElement.scrollTop;
-    var speed = pos / 25;
-    var time = setInterval(function () {
-        document.documentElement.scrollTop = document.documentElement.scrollTop - speed;
-        if (document.documentElement.scrollTop == 0) {
-            clearInterval(time);
-        }
-    }, 10);
-};
-
-//事件委托函数
+//竖导航点击执行函数
 var vasHandler = function (event) {
+    log('click');
     var e = event || window.event,
         target = e.target || e.srcElement;
     var vindex = target.getAttribute('data-vindex');
     var currentPos = document.documentElement.scrollTop;
     var pos = vclick[vindex].offsetTop;
+    log(pos);
     switch (vindex) {
         case '0':
         case '2':
@@ -305,19 +319,11 @@ var vasHandler = function (event) {
             clearInterval(timex);
         }
     }, 10);
-//document.documentElement.scrollTop = pos;
 };
 
-//事件委托-点击使页面跳转到指定模块
-if (window.addEventListener) {
-    vbox.addEventListener('click', vasHandler, false);
-} else if (window.attachEvent) {
-    vbox.attachEvent('onclick', vasHandler);
-}
-
-//背景切换
+//竖导航样式切换
 var dhChange = function (vindex) {
-    for (var i = 0; i < vas.length - 1; i++) {
+    for (var i = 0; i < vas.length; i++) {
         vas[i].style.backgroundColor = '#fff';
         vas[i].style.color = '#000';
     }
@@ -327,4 +333,217 @@ var dhChange = function (vindex) {
     }
 };
 
+//页面滚动事件
+EventDeal.addHandler(window, 'scroll', windowScrolled);
+//竖导航点击事件
+EventDeal.addHandler(vbox, 'click', vasHandler);
+
+/*9.8*/
+var se = document.getElementById('gray');
+var bd = document.getElementById('bigd');
+var divs = document.getElementById('bigd').getElementsByTagName('a');
+var pxIndexs = document.getElementsByClassName('px');
+//log(pxIndexs.length);
+var vclicksParent = document.querySelector('.Content .box');
+var graybody = document.getElementById('graybody');
+var vOpen = document.querySelector('.fix .open');
+var lastClick = document.querySelector('.fix .last');
+var moveDis, target = {}, mousedownX, mousedownY, index, ad, flag = false;
+var can = false, colorDisplay = true, targetIndex;
+lastClick.onclick = function () {
+    log('last');
+    can = !can;
+    if (!can) {
+        graybody.style.display = 'none';
+        vOpen.style.display = 'none';
+        bd.removeEventListener('mousedown', mouseDown, false);
+        bd.removeEventListener('mousemove', mouseMove, false);
+        bd.removeEventListener('mouseup', mouseUp, false);
+
+        graybody.removeEventListener('mousemove', semouseMove, false);
+        graybody.removeEventListener('mouseup', semouseUp, false);
+
+
+        vas = document.querySelectorAll('.vMenu .fix .box #bigd a');
+        vbox = document.querySelector('.vMenu .fix .box #bigd');
+        fix = document.querySelector('.Content > .vMenu .fix');
+        vclick = document.getElementsByClassName('vclick');
+
+        //页面滚动事件
+        EventDeal.addHandler(window, 'scroll', windowScrolled);
+        //竖导航点击事件
+        EventDeal.addHandler(vbox, 'click', vasHandler);
+
+    } else {
+        graybody.style.display = 'block';
+        vOpen.style.display = 'block';
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = '#fff';
+            divs[i].style.color = '#000';
+        }
+        bd.addEventListener('mousedown', mouseDown, false);
+        bd.addEventListener('mousemove', mouseMove, false);
+        bd.addEventListener('mouseup', mouseUp, false);
+
+
+        graybody.addEventListener('mousemove', semouseMove, false);
+        graybody.addEventListener('mouseup', semouseUp, false);
+    }
+};
+
+var newdiv = document.createElement('a');
+newdiv.style.display = 'block';
+newdiv.style.width = '50px';
+newdiv.style.height = '30px';
+newdiv.style.backgroundColor = '#fff';
+mouseDown = function (event) {
+    var e = event || window.event;
+    target = e.target || e.srcElement;
+
+    //鼠标按下时的鼠标所在的X，Y坐标
+    mousedownX = e.clientX;
+    mousedownY = e.clientY;
+
+    //初始位置的X，Y 坐标
+    initX = target.offsetLeft;
+    initY = target.offsetTop;
+
+    target.style.position = 'absolute';
+    target.style.zIndex = 2;
+
+    targetIndex = target.getAttribute('data-vindex');
+
+    moveDis = 0;
+    target.style.left = initX;
+    target.style.top = moveDis + initY + 'px';
+
+    target.parentNode.insertBefore(newdiv, target);
+
+    flag = true;
+};
+
+mouseMove = function (event) {
+    var e = event || window.event;
+    if (flag && can) {
+        var mouseMoveY = e.clientY;
+
+        moveDis = mouseMoveY - mousedownY;
+
+        target.style.left = initX;
+        target.style.top = moveDis + initY + 'px';
+
+        //move过程判断鼠标位置列表变换
+        var goalT = target.offsetTop;
+        var whole = target.offsetHeight;
+        var half = whole / 2;
+
+
+        for (var i = 0; i < divs.length; i++) {
+            var index = divs[i].getAttribute('data-vindex');
+            index = parseInt(index);//data-vindex的内容超过了9,需要parsetInt()
+            if (moveDis > 0) {
+                if ((goalT + whole) > ((divs.length - 1) * whole - half)) {
+                    bd.appendChild(newdiv);
+                } else if ((goalT + whole) > (divs[i].offsetTop + half)) {
+                    divs[i + 1].parentNode.insertBefore(newdiv, divs[i + 1]);
+                }
+            } else {
+                if (goalT < half) {
+                    bd.insertBefore(newdiv, bd.firstElementChild);
+                } else if (index < parseInt(target.getAttribute('data-vindex')) && goalT < (divs[i].offsetTop + half)) {
+                    divs[i].parentNode.insertBefore(newdiv, divs[i]);
+                    break;
+                }
+            }
+        }
+    }
+};
+
+mouseUp = function (event) {
+    var e = event || window.event;
+
+    target.style.position = 'relative';
+    target.style.zIndex = 1;
+    target.style.backgroundColor = '#fff';
+    target.style.top = '0px';
+    bd.replaceChild(target, newdiv);
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].setAttribute('data-vindex', i);
+    }
+    var erindex = target.getAttribute('data-vindex');
+    log(targetIndex);
+    log(parseInt(erindex) + 1);
+    let toIndex = parseInt(erindex);
+    let fromIndex = parseInt(targetIndex);
+    if (moveDis > 0) {
+        toIndex += 1;
+    }
+    vclicksParent.insertBefore(pxIndexs[fromIndex], pxIndexs[toIndex]);
+    flag = false;
+};
+
+semouseMove = function (event) {
+    var e = event || window.event;
+    if (flag && can) {
+        var seY = e.clientY;
+        moveDis = seY - mousedownY;
+
+        target.style.color = '#fff';
+        target.style.backgroundColor = '#00A1D6';
+        target.style.left = initX;
+        target.style.top = moveDis + initY + 'px';
+
+        //move过程判断鼠标位置列表变换
+        var goalT = target.offsetTop;
+        var whole = target.offsetHeight;
+        var half = whole / 2;
+
+
+        for (var i = 0; i < divs.length; i++) {
+            var index = divs[i].getAttribute('data-vindex');
+            index = parseInt(index);
+            if (moveDis > 0) {
+                if ((goalT + whole) > ((divs.length - 1) * whole - half)) {
+                    bd.appendChild(newdiv);
+                } else if ((goalT + whole) > (divs[i].offsetTop + half)) {
+                    divs[i + 1].parentNode.insertBefore(newdiv, divs[i + 1]);
+                }
+            } else {
+                if (goalT < half) {
+                    bd.insertBefore(newdiv, bd.firstElementChild);
+                } else if (index < parseInt(target.getAttribute('data-vindex')) && goalT < (divs[i].offsetTop + half)) {
+                    divs[i].parentNode.insertBefore(newdiv, divs[i]);
+                    break;
+                }
+            }
+        }
+    }
+};
+
+semouseUp = function (event) {
+    var e = event || window.event;
+    target.style.position = 'relative';
+    target.style.zIndex = 1;
+    target.style.backgroundColor = '#fff';
+    target.style.color = '#000';
+    target.style.top = '0px';
+    bd.replaceChild(target, newdiv);
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].setAttribute('data-vindex', i);
+    }
+    var erindex = target.getAttribute('data-vindex');
+    log(targetIndex);
+    log(parseInt(erindex) + 1);
+    let toIndex = parseInt(erindex);
+    let fromIndex = parseInt(targetIndex);
+    if (moveDis > 0) {
+        toIndex += 1;
+    }
+    vclicksParent.insertBefore(pxIndexs[fromIndex], pxIndexs[toIndex]);
+    flag = false;
+};
+
+function log() {
+    console.log.apply(this, arguments);
+}
 
