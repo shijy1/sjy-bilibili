@@ -99,7 +99,6 @@ function autoTimer() {
 
 //直播推荐自动切换
 function zbtjTimer() {
-    var zbIndex = 0;
     if (zbtj_box.offsetLeft == -2 * zbw) {
         zbIndex = 0;
     } else {
@@ -118,7 +117,6 @@ function zbtjTimer() {
 
 //番剧自动切换
 function fjdtTimer() {
-    var fjIndex = 0;
     if (fjdt_box.offsetLeft == -2 * fjw) {
         fjIndex = 0;
     } else {
@@ -136,7 +134,6 @@ function fjdtTimer() {
 }
 //国创自动切换
 function gcTimer() {
-    var gcIndex = 0;
     if (gc_box.offsetLeft == -gcw) {
         gcIndex = 0;
     } else {

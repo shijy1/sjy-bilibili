@@ -50,7 +50,7 @@ var EventDeal = {
     }
 };
 
-var bigBox = document.querySelector('.Content > .box');
+var bigBox = document.querySelector('.Content');
 
 //bigBox的click事件
 var bigHandler = function (event) {
